@@ -1,7 +1,7 @@
-// Copyright 2021 Your Name <your_email>
+// Copyright 2022 Toschakov Pavel
 
-#ifndef INCLUDE_EXAMPLE_HPP_
-#define INCLUDE_EXAMPLE_HPP_
+#ifndef INCLUDE_HASH_CALCULATION_HPP_
+#define INCLUDE_HASH_CALCULATION_HPP_
 
 #include <atomic>
 #include <csignal>
@@ -14,4 +14,4 @@
 
 void hash_calc(const std::string& path, size_t num_of_threads, size_t rotation);
 
-#endif // INCLUDE_EXAMPLE_HPP_
+#endif // INCLUDE_HASH_CALCULATION_HPP_

@@ -1,9 +1,7 @@
-//
-// Created by Pavel Toshchakov on 12.02.2022.
-//
+// Copyright 2022 Toschakov Pavel
 
-#ifndef TEMPLATE_JSON_CREATOR_HPP
-#define TEMPLATE_JSON_CREATOR_HPP
+#ifndef INCLUDE_JSON_CREATOR_HPP_
+#define INCLUDE_JSON_CREATOR_HPP_
 
 #include <ctime>
 #include <fstream>
@@ -38,4 +36,4 @@ class json_creator{
 
 
 
-#endif  // TEMPLATE_JSON_CREATOR_HPP
+#endif  // INCLUDE_JSON_CREATOR_HPP_

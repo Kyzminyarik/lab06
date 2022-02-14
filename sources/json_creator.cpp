@@ -1,5 +1,4 @@
-// Copyright 2021 Your Name <your_email>
-
+// Copyright 2022 Toschakov Pavel
 #include <json_creator.hpp>
 
 void json_creator::add_item(const json_data& val)  {

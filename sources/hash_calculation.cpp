@@ -1,6 +1,4 @@
-//
-// Created by Pavel Toshchakov on 14.02.2022.
-//
+// Copyright 2022 Toschakov Pavel
 #include <hash_calculation.hpp>
 
 std::atomic<bool> in_process = true;
@@ -23,7 +21,6 @@ void get_hash(json_creator& hashes_json){
     }
     BOOST_LOG_TRIVIAL(trace) << "Got hash: " << hash
                              << " from string: " << rand_str;
-
   }
 }
 

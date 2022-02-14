@@ -1,9 +1,7 @@
-//
-// Created by Pavel Toshchakov on 14.02.2022.
-//
+// Copyright 2022 Toschakov Pavel
 
-#ifndef TEMPLATE_LOGGING_HPP
-#define TEMPLATE_LOGGING_HPP
+#ifndef INCLUDE_LOGGING_HPP_
+#define INCLUDE_LOGGING_HPP_
 #include <iostream>
 #include <boost/log/exceptions.hpp>
 #include <boost/log/sinks.hpp>
@@ -15,4 +13,4 @@ namespace keywords = boost::log::keywords;
 
 void set_logs(size_t val);
 
-#endif  // TEMPLATE_LOGGING_HPP
+#endif  // INCLUDE_LOGGING_HPP_
