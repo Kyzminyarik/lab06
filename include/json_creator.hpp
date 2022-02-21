@@ -27,7 +27,7 @@ class json_creator{
   json_creator& operator=(const json_creator& val) = delete;
   void add_item(const json_data& val);
   void save_json(const std::string& path) const;
-  bool is_empty() const noexcept;
+  bool is_empty() const;
 
  private:
   json data;

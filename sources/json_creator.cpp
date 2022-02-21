@@ -20,6 +20,6 @@ void json_creator::save_json(const std::string& path) const {
   file.close();
   }
 
-  bool json_creator::is_empty() const noexcept {
+  bool json_creator::is_empty() const {
     return data.empty();
   }
