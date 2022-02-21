@@ -30,8 +30,8 @@ string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 # commented out to increase the build speed.
  hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
-hunter_add_package(Boost COMPONENTS log thread filesystem system)
-find_package(Boost CONFIG REQUIRED COMPONENTS log log_setup thread filesystem system)
+hunter_add_package(Boost COMPONENTS log thread)
+find_package(Boost CONFIG REQUIRED COMPONENTS log log_setup thread)
 hunter_add_package(nlohmann_json)
 find_package(nlohmann_json CONFIG REQUIRED)
 
@@ -55,7 +55,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         "$<INSTALL_INTERFACE:third-party/PicoSHA2-2>")
 
 #target_link_libraries(${PROJECT_NAME} PUBLIC Boost::system Boost::filesystem)
-target_link_libraries(demo ${PROJECT_NAME} ${Boost_LIBRARIES} Boost::log Boost::log_setup Boost::thread Boost::filesystem Boost::system)
+target_link_libraries(demo ${PROJECT_NAME} ${Boost_LIBRARIES} Boost::log Boost::log_setup Boost::thread)
 target_link_libraries(demo ${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME} PUBLIC nlohmann_json::nlohmann_json)
 

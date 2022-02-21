@@ -2,7 +2,6 @@
 
 #ifndef INCLUDE_HASH_CALCULATION_HPP_
 #define INCLUDE_HASH_CALCULATION_HPP_
-
 #include <atomic>
 #include <csignal>
 #include <ctime>
