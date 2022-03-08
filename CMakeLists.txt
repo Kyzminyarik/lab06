@@ -29,10 +29,12 @@ string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 # new versions of cmake contain gtest search files
 # commented out to increase the build speed.
  hunter_add_package(GTest)
-set(Boost_NO_BOOST_CMAKE ON)
 find_package(GTest CONFIG REQUIRED)
+
+set(Boost_NO_BOOST_CMAKE ON)
 hunter_add_package(Boost COMPONENTS program_options log thread filesystem system)
 find_package(Boost CONFIG REQUIRED COMPONENTS program_options log log_setup thread filesystem system)
+
 hunter_add_package(nlohmann_json)
 find_package(nlohmann_json CONFIG REQUIRED)
 
@@ -42,9 +44,9 @@ add_library(${PROJECT_NAME} STATIC
         include/json_creator.hpp include/logging.hpp sources/logging.cpp sources/hash_calculation.cpp include/hash_calculation.hpp)
 
 add_executable(demo
-  ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/sources/json_creator.cpp
-        sources/logging.cpp sources/hash_calculation.cpp)
+  ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp)
+#        ${CMAKE_CURRENT_SOURCE_DIR}/sources/json_creator.cpp
+#        sources/logging.cpp sources/hash_calculation.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
@@ -57,7 +59,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 
 #target_link_libraries(${PROJECT_NAME} PUBLIC Boost::system Boost::filesystem)
 target_link_libraries(demo ${PROJECT_NAME} ${Boost_LIBRARIES} Boost::log Boost::log_setup Boost::thread Boost::filesystem Boost::system Boost::program_options)
-target_link_libraries(demo ${PROJECT_NAME})
+#target_link_libraries(demo ${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME} PUBLIC nlohmann_json::nlohmann_json)
 
 
