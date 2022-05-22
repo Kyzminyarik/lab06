@@ -1,4 +1,4 @@
-// Copyright 2022 Toschakov Pavel
+// Copyright 2022   Kuzmin Yaroslav
 #include <json_creator.hpp>
 
 void json_creator::add_item(const json_data& val)  {

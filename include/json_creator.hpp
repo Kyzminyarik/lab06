@@ -1,4 +1,4 @@
-// Copyright 2022 Toschakov Pavel
+// Copyright 2022   Kuzmin Yaroslav
 
 #ifndef INCLUDE_JSON_CREATOR_HPP_
 #define INCLUDE_JSON_CREATOR_HPP_

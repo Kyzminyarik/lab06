@@ -1,4 +1,4 @@
-// Copyright 2022 Toschakov Pavel
+// Copyright 2022   Kuzmin Yaroslav
 #include <logging.hpp>
 
 void set_logs(size_t val){

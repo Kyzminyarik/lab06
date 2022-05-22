@@ -8,11 +8,11 @@ int main(int argc, char* argv[]) {
   desc.add_options()("help", "Show help message")
                     ("threads,t", po::value<size_t>(),//кол во потоков
        "Maximum number of concurrently executed threads")
-                    ("rotation,r", po::value<size_t>(),
+                    ("rotation,r", po::value<size_t>(),//объем файлов
            "Rotation for logfiles")
                     ("json_file,j", po::value<std::string>(),
                   "Path to output json-array");//путь к файлу
-  po::variables_map vm;
+  po::variables_map vm;//словарь переменных
   po::store(po::parse_command_line(argc, argv, desc),vm);
   po::notify(vm);
 
@@ -23,12 +23,7 @@ int main(int argc, char* argv[]) {
 
   size_t threads = std::thread::hardware_concurrency();
   if (vm.count("threads")) {
-    if (vm.at("threads").as<size_t>() > threads) {
-      threads = std::thread::hardware_concurrency();
-      std::cerr << "Maximum allowed number of concurrently is " +
-                       std::to_string(threads)
-                << '\n';
-    } else {
+    if (vm.at("threads").as<size_t>() <= threads) {
       threads = vm.at("threads").as<size_t>();
     }
   }
